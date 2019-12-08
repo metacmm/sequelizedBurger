@@ -12,13 +12,34 @@
                 {{#unless devoured}}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{id}}. {{name}}
+                    <select>
+                        {{#each customers}}
+                        <option>
+                            {{name}}
+                        </option>
+                        {{/each}}
+                    </select>
                     <button class="change-devour btn btn-outline-secondary" data-id={{id}}>Devour It!</button>
+                    Eaten by {{name}}
                 </li>
                 {{/unless}}
                 {{/each}}
             </ul>
+            <div class="my-4 d-flex justify-content-center">
+                <form class="create-form">
+                    <div class="form-group">
+                        <label class="form-label">Enter a burger you have</label>
+                        <input type="text" class="form-control" id="text-burger" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Enter the quantity of the burger you have and click the "Submit" button</label>
+                        <input type="text" class="form-control" id="text-quantity" name="quantity">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
+                </form>
+            </div>
         </div>
-        <div class="col-md">
+        <!--div class="col-md">
             <ul class="list-group list-group-flush justify-content-md-center">
                 {{#each burgers}}
                 {{#if devoured}}
@@ -28,16 +49,11 @@
                 {{/if}}
                 {{/each}}
             </ul>
+        </div-->
+        <div>
+
         </div>
     </div>
 
-    <div class="row my-4 d-flex justify-content-center">
-        <form class="create-form">
-            <div class="form-group">
-                <label class="form-label">Enter a burger you want to eat and click the "Submit" button</label>
-                <input type="text" class="form-control" id="text-burger" name="name">
-            </div>
-            <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
-        </form>
-    </div>
+
 </div>

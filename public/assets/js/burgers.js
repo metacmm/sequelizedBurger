@@ -4,6 +4,7 @@ $(function(){
         
         var newBurger = {
             name: $("#text-burger").val().trim(),
+            quantity: parseInt($("#text-quantity").val().trim())
         };
         console.log(newBurger);
         $.post("/api/burgers",newBurger, function(data){

@@ -4,11 +4,18 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING,
             allowNull: false
         },
-        devoured: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false
-        }
+        quantity:{
+            type: DataTypes.INTEGER,
+            validate:{
+                min: 1,
+                max: 100
+            }
+        },
     });
+
+    Burger.associate = function(modles){
+        Burger.hasMany(modles.Customer);
+    }
 
     return Burger;
 };

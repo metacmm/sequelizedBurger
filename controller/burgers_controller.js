@@ -4,7 +4,10 @@ var router = express.Router();
 
 router.get("/", function(req, res){
 
-    db.Burger.findAll({}).then(function(data){
+    db.Burger.findAll({
+        include:[db.Customer],
+    }).then(function(data){
+        
         var hbsObject = {
             burgers: data
         }
@@ -34,6 +37,7 @@ router.post("/api/burgers", function(req, res){
     db.Burger.create(
         {
             name: req.body.name,
+            quantity: req.body.quantity
         }
     ).then(function(data){
         var hbsObject = {
