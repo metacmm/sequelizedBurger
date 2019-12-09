@@ -26,5 +26,16 @@ $(function(){
             console.log("Devour the burger of " + id);
             location.reload();
         })
+    });
+
+    $("#btn-submitOrder").on("click", function(event){
+        event.preventDefault();
+        var newCustomer = {
+            name: $("#text-customer").val().trim(),
+            BurgerId: $("#select-burger").val()
+        };
+        $.post("/api/customers", newCustomer, function(data){
+            location.reload();
+        });
     })
 });
