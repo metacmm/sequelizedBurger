@@ -13,10 +13,6 @@ $(function(){
     });
 
     $(".change-devour").on("click", function(event){
-        // var id = $(this).data("id");
-        // var newDevourState = {
-        //     devoured: true
-        // };
         var id = $(this).siblings(".custom-select").val();
         console.log("button id = " + $(this).data("id"));
         console.log("customer id = " + id);
@@ -42,5 +38,6 @@ $(function(){
         $.post("/api/customers", newCustomer, function(data){
             location.reload();
         });
-    })
+    });
+
 });

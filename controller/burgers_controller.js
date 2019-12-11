@@ -56,11 +56,6 @@ router.put("/api/customers/:id", function (req, res) {
                 id: req.params.id
             }
         }).then(function (data) {
-            // var hbsObject = {
-            //     customer: data
-            // }
-            // res.render("index", hbsObject);
-            // renderIndex(res);
             db.Customer.findOne({
                 where: {
                     id: req.params.id
@@ -88,7 +83,7 @@ router.post("/api/burgers", function (req, res) {
         }
     ).then(function (data) {
         res.json({ id: data.id });
-    })
+    });
 });
 
 router.post("/api/customers", function (req, res) {
@@ -99,48 +94,6 @@ router.post("/api/customers", function (req, res) {
         }
     ).then(function (data) {
         res.json({ id: data.id });
-    })
-})
-
-// var renderIndex = function(res){
-//     db.Burger.findAll({
-//         include: [db.Customer],
-//     }).then(function (data) {
-//         console.log(data);
-//         var hbsObject = {
-//             burgers: [],
-//             availableBurgers: [],
-//         };
-
-//         for(var i = 0; i < data.length; i++){
-//             var newBurger = {
-//                 id: data[i].id,
-//                 name: data[i].name,
-//                 customers:[],
-//                 arrServedCustomer:[]
-//             };
-//             if (data[i].quantity > 0){
-//                 hbsObject.availableBurgers.push(
-//                     {
-//                         id:data[i].id,
-//                         name:data[i].name,
-//                     });
-//             }
-//             console.log(data[i].Customers);
-
-//             for (var j = 0; j < data[i].Customers.length; j++){
-//                 if (data[i].Customers[j].served){
-//                     newBurger.arrServedCustomer.push(data[i].Customers[j].name);
-//                 } else {
-//                     newBurger.customers.push({
-//                         customerId: data[i].Customers[j].id,
-//                         customerName: data[i].Customers[j].name
-//                     });
-//                 }
-//             }
-//             hbsObject.burgers.push(newBurger);
-//         }
-//         res.render("index", hbsObject);
-//     });
-// }
+    });
+});
 module.exports = router;

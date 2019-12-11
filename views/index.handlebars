@@ -6,10 +6,10 @@
         <h1 class="text-center">Eat Da Burger!</h1>
     </div>
     <div class="row my-4">
-        <div class="col-md-8">
+        <div class="col-sm-12">
             <ul class="list-group list-group-flush justify-content-md-center">
                 {{#each burgers}}
-           
+
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{id}}. {{name}}
                     <select class="custom-select" style="width: 150px">
@@ -22,7 +22,7 @@
                     <button class="change-devour btn btn-outline-secondary" data-id={{id}}>Devour It!</button>
                     Eaten by {{servedCustomers}}
                 </li>
-              
+
                 {{/each}}
             </ul>
             <div class="my-4 d-flex justify-content-center">
@@ -32,45 +32,36 @@
                         <input type="text" class="form-control" id="text-burger" name="name">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Enter the quantity of the burger you have and click the "Add" button</label>
+                        <label class="form-label">Enter the quantity of the burger you have and click the "Add"
+                            button</label>
                         <input type="text" class="form-control" id="text-quantity" name="quantity">
                     </div>
                     <button type="submit" class="btn btn-primary" id="btn-submit">Add</button>
                 </form>
             </div>
         </div>
-        <!--div class="col-md">
-            <ul class="list-group list-group-flush justify-content-md-center">
-                {{#each burgers}}
-                {{#if devoured}}
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-light">
-                    {{id}}. {{name}}
-                </li>
-                {{/if}}
-                {{/each}}
-            </ul>
-        </div-->
-        <div class="col-md-4">
-            <button class="btn btn-primary">Click to place your order</button>
-            <form class="create-form">
-                <div class="form-group">
-                    <label class="form-label">Enter your name</label>
-                    <input type="text" class="form-control" id="text-customer" name="name">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Select the burger you want to eat</label>
-                    <select class="custom-select" id="select-burger">
-                        {{#each availableBurgers}}
-                        <option value={{id}}>
-                            {{name}}
-                        </option>
-                        {{/each}}
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" id="btn-submitOrder">Submit</button>
-            </form>
-        </div>
     </div>
-
-
+    <hr>
+    <div class="row">
+        <h4>Please fill your order below</h4>
+    </div>
+    <div>
+        <form class="create-form" >
+            <div class="form-group">
+                <label class="form-label">Enter your name</label>
+                <input type="text" class="form-control" id="text-customer" name="name">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Select the burger you want to eat</label>
+                <select class="custom-select" id="select-burger">
+                    {{#each availableBurgers}}
+                    <option value={{id}}>
+                        {{name}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-submitOrder">Submit</button>
+        </form>
+    </div>
 </div>
