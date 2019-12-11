@@ -14,7 +14,7 @@
                     {{id}}. {{name}}
                     <select class="custom-select" style="width: 150px">
                         {{#each customers}}
-                        <option value={{cusmtomerId}}>
+                        <option value={{customerId}}>
                             {{customerName}}
                         </option>
                         {{/each}}
@@ -32,7 +32,7 @@
                         <input type="text" class="form-control" id="text-burger" name="name">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Enter the quantity of the burger you have and click the "Submit" button</label>
+                        <label class="form-label">Enter the quantity of the burger you have and click the "Add" button</label>
                         <input type="text" class="form-control" id="text-quantity" name="quantity">
                     </div>
                     <button type="submit" class="btn btn-primary" id="btn-submit">Add</button>

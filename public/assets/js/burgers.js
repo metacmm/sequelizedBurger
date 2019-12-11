@@ -13,17 +13,22 @@ $(function(){
     });
 
     $(".change-devour").on("click", function(event){
-        var id = $(this).data("id");
-        var newDevourState = {
-            devoured: true
-        };
-
+        // var id = $(this).data("id");
+        // var newDevourState = {
+        //     devoured: true
+        // };
+        var id = $(this).siblings(".custom-select").val();
+        console.log("button id = " + $(this).data("id"));
+        console.log("customer id = " + id);
+        var newServeState = {
+            served: true
+        }
         $.ajax({
-            url: "/api/burgers/" + id,
+            url: "/api/customers/" + id,
             type: "PUT",
-            data: newDevourState
+            data: newServeState
         }).then(function(){
-            console.log("Devour the burger of " + id);
+            console.log("Serve to customer " + id);
             location.reload();
         })
     });
