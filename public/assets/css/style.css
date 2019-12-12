@@ -5,7 +5,10 @@ h1{
 .form-label{
     font-family: 'Baskervville', serif;
 }
-
+img{
+    width: 35%;
+    height: 25%;
+}
 body{
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
